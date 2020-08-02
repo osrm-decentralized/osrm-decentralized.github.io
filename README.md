@@ -2,7 +2,7 @@
 website for explanation, listing active deployments  
 Browse on github: [https://github.com/osrm-decentralized](https://github.com/osrm-decentralized)
 
-## [See Demo page](demo.html) featuring various independent OSRM servers
+## [See Demo page](demo) featuring various independent OSRM servers
 
 ## India
 Frontend: [http://139.59.87.238:5001/](http://139.59.87.238:5001/)  
