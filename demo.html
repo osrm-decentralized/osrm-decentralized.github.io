@@ -1,0 +1,65 @@
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSRM Decentralized</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+crossorigin=""/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="lib/leaflet.contextmenu.min.css">
+
+<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+crossorigin=""></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="lib/leaflet-ant-path.js"></script>
+<script src="lib/polyline_convert.js"></script>
+<script src="lib/leaflet.contextmenu.min.js"></script>
+<script src="lib/leaflet-providers.js"></script>
+
+
+<style>
+body,
+div {
+  font-family: sans-serif,"Trebuchet MS", Arial, Helvetica;
+}
+#map {
+  width: 100%;
+  height: 70vh;
+}
+
+#dump {
+    font-family: monospace;
+    font-size: 0.9em;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+}
+
+</style></head>
+<body>
+
+<div class="container-fluid">
+
+<h1>OSRM Decentralized</h1>
+
+<h3>Demo map</h3>
+<p><select id="osrmSelect"><option value="">Choose the OSRM server</option></select>
+&nbsp;&nbsp;&nbsp; | <input id="osrm_fromPlace" placeholder="from lat,lon"> | <input id="osrm_toPlace" placeholder="to lat,lon"> | <button onclick="mapOSRM()">Run</button> | <span id="status"></span>
+
+</p>
+<div id="map"></div>
+<br>
+<p>API query URL: <small><span id="url"></span></small><br>Query result:<br>
+	<textarea id="dump"></textarea>
+</p>
+
+<br><br>
+<footer>Created by <a href="https://nikhilvj.co.in" target="_blank">Nikhil VJ</a>. Contact: nikhil.js [at] gmail.com. Consider making a one-time <a href="https://nikhilvj.co.in/contribute/" target="_blank">contribution to support</a> this and other such open source initiatives.</footer>
+</div>
+
+
+<script src="main.js"></script>
+</body></html>

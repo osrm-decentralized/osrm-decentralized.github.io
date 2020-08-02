@@ -1,0 +1,17 @@
+{
+    "OSRM Maharashtra": {
+        "url": "https://server.nikhilvj.co.in/osrm_mh_api/",
+        "title": "OSRM Maharashtra",
+        "center": [20.963,75.432],
+        "zoom": 6,
+        "frontend": "https://server.nikhilvj.co.in/osrm_mh/"
+    },
+    "OSRM India": {
+        "url": "http://176.9.114.71:5000/",
+        "title": "OSRM India",
+        "center": [17.963,77.432],
+        "zoom": 5,
+        "frontend": "http://139.59.87.238:5001/"
+    }
+
+}
