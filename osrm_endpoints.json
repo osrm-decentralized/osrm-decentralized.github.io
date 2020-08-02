@@ -16,5 +16,50 @@
         "zoom": 5,
         "frontend": "http://139.59.87.238:5001/",
         "maintainer": "Srihari Thalla"
+    },
+    "OSRM Switzerland (car)": {
+        "url": "https://routing.osm.ch/routed-car/",
+        "title": "OSRM Switzerland (car)",
+        "description": "",
+        "center": [47,9],
+        "zoom": 8,
+        "frontend": "https://routing.osm.ch/",
+        "maintainer": "<a href=\"https://sosm.ch\">Swiss OpenStreetMap Association</a>"
+    },
+    "OSRM Switzerland (city bike)": {
+        "url": "https://routing.osm.ch/routed-bike/",
+        "title": "OSRM Switzerland (city bike)",
+        "description": "Bike profile for smooth surfaces",
+        "center": [47,9],
+        "zoom": 8,
+        "frontend": "https://routing.osm.ch/",
+        "maintainer": "<a href=\"https://sosm.ch\">Swiss OpenStreetMap Association</a>"
+    },
+    "OSRM Switzerland (touring bike)": {
+        "url": "https://routing.osm.ch/routed-bike-touring/",
+        "title": "OSRM Switzerland (touring bike)",
+        "description": "Bike profile including rough surfaces",
+        "center": [47,9],
+        "zoom": 8,
+        "frontend": "https://routing.osm.ch/",
+        "maintainer": "<a href=\"https://sosm.ch\">Swiss OpenStreetMap Association</a>"
+    },
+    "OSRM Switzerland (foot)": {
+        "url": "https://routing.osm.ch/routed-foot/",
+        "title": "OSRM Switzerland (foot)",
+        "description": "General walking profile",
+        "center": [47,9],
+        "zoom": 8,
+        "frontend": "https://routing.osm.ch/",
+        "maintainer": "<a href=\"https://sosm.ch\">Swiss OpenStreetMap Association</a>"
+    },
+    "OSRM Switzerland (hiking)": {
+        "url": "https://routing.osm.ch/routed-hiking/",
+        "title": "OSRM Switzerland (hiking)",
+        "description": "Routing including demanding hiking paths",
+        "center": [47,9],
+        "zoom": 8,
+        "frontend": "https://routing.osm.ch/",
+        "maintainer": "<a href=\"https://sosm.ch\">Swiss OpenStreetMap Association</a>"
     }
 }
