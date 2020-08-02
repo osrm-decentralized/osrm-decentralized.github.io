@@ -1,5 +1,4 @@
 # osrm-decentralized
-website for explanation, listing active deployments  
 Browse on github: [https://github.com/osrm-decentralized](https://github.com/osrm-decentralized)
 
 ## [See Demo page](demo) featuring various independent OSRM servers
