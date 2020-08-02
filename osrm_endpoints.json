@@ -9,7 +9,7 @@
         "maintainer": "<a href=\"https://nikhilvj.co.in\">Nikhil VJ, Pune</a>, nikhil.js [at] gmail.com"
     },
     "OSRM India": {
-        "url": "http://176.9.114.71:5000/",
+        "url": "http://195.201.82.178:5000/",
         "title": "OSRM India",
         "description": "Note: deployed on a non-SSL URL, may not work online",
         "center": [17.963,77.432],
