@@ -47,17 +47,21 @@ div {
 
 <h3>Demo map</h3>
 <p><select id="osrmSelect"><option value="">Choose the OSRM server</option></select>
-&nbsp;&nbsp;&nbsp; | <input id="osrm_fromPlace" placeholder="from lat,lon"> | <input id="osrm_toPlace" placeholder="to lat,lon"> | <button onclick="mapOSRM()">Run</button> | <span id="status"></span>
+&nbsp;&nbsp;&nbsp;<span id="aboutServer"></span></p>
 
+<p><input id="osrm_fromPlace" placeholder="from lat,lon"> | <input id="osrm_toPlace" placeholder="to lat,lon"> | <button onclick="mapOSRM()">Run</button> | <span id="status"></span>
 </p>
 <div id="map"></div>
 <small>Right-click on the map to place your start and end points</small><br><br>
-<p>API query URL: <small><span id="url"></span></small><br>Query result:<br>
+<p>API query URL: <small><span id="url"></span></small> <a href="http://project-osrm.org/docs/v5.5.1/api/">OSRM API docs</a><br>Query result:<br>
 	<textarea id="dump"></textarea>
 </p>
 
+<br>
+<p>Roll your own OSRM instance for your own region using our easy docker recipes! Go to <a href="/">home page</a> to learn more.<br>
+<footer>Created by <a href="https://nikhilvj.co.in" target="_blank">Nikhil VJ</a>. Contact: nikhil.js [at] gmail.com. Consider making a one-time <a href="https://nikhilvj.co.in/contribute/" target="_blank">contribution to support</a> this and other such open source initiatives.
+</footer>
 <br><br>
-<footer>Created by <a href="https://nikhilvj.co.in" target="_blank">Nikhil VJ</a>. Contact: nikhil.js [at] gmail.com. Consider making a one-time <a href="https://nikhilvj.co.in/contribute/" target="_blank">contribution to support</a> this and other such open source initiatives.</footer>
 </div>
 
 

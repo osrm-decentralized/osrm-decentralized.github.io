@@ -2,16 +2,19 @@
     "OSRM Maharashtra": {
         "url": "https://server.nikhilvj.co.in/osrm_mh_api/",
         "title": "OSRM Maharashtra",
-        "center": [20.963,75.432],
-        "zoom": 6,
-        "frontend": "https://server.nikhilvj.co.in/osrm_mh/"
+        "description": "",
+        "center": [18.963,75.432],
+        "zoom": 7,
+        "frontend": "https://server.nikhilvj.co.in/osrm_mh/",
+        "maintainer": "<a href=\"https://nikhilvj.co.in\">Nikhil VJ, Pune</a>, nikhil.js [at] gmail.com"
     },
     "OSRM India": {
         "url": "http://176.9.114.71:5000/",
         "title": "OSRM India",
+        "description": "Note: deployed on a non-SSL URL, may not work online",
         "center": [17.963,77.432],
         "zoom": 5,
-        "frontend": "http://139.59.87.238:5001/"
+        "frontend": "http://139.59.87.238:5001/",
+        "maintainer": "Srihari Thalla"
     }
-
 }

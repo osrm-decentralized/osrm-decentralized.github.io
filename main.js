@@ -127,4 +127,21 @@ $(document).ready(function() {
     }).fail(function() {
         alert( `error loading ${endpointsJson}` );
     });
+
+    $('#osrmSelect').change(function() {
+        var chosen = $(this).val();
+        if(!chosen) return;
+        // console.log(chosen);
+        var chosenDetails = globalEndpoints[chosen];
+        var content = '';
+        if(chosenDetails['title']) content += `<b>${chosenDetails['title']}</b>`;
+        if(chosenDetails['description']) content += ` <small>${chosenDetails['description']}</small>`;
+
+        if(chosenDetails['frontend']) content += ` | <a href="${chosenDetails['frontend']}" target="_blank">Open its own Frontend</a>`;
+        if(chosenDetails['maintainer']) content += ` | maintained by ${chosenDetails['maintainer']}`;
+
+        if(chosenDetails['center'] && chosenDetails['zoom']) map.flyTo(chosenDetails['center'], chosenDetails['zoom']);
+
+        $('#aboutServer').html(content);
+    })
 });
