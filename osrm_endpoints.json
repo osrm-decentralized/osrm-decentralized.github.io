@@ -17,6 +17,13 @@
         "frontend": "http://139.59.87.238:5001/",
         "maintainer": "Srihari Thalla"
     },
+    "OSRM New Delhi": {
+        "url": "https://server2.nikhilvj.co.in/osrm_delhi/",
+        "title": "OSRM New Delhi, India",
+        "center": [28.6117,77.2765],
+        "zoom": 11,
+        "maintainer": "<a href=\"https://nikhilvj.co.in\">Nikhil VJ, Pune</a>, nikhil.js [at] gmail.com"
+    },
     "OSRM Switzerland (car)": {
         "url": "https://routing.osm.ch/routed-car/",
         "title": "OSRM Switzerland (car)",

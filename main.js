@@ -85,6 +85,7 @@ function mapOSRM() {
     // var url = `${baseurl}route/v1/foot/${fromRev};${toRev}?overview=full&alternatives=true&steps=false&hints=;&geometries=geojson`;
     var url = `${baseurl}route/v1/foot/${fromRev};${toRev}?overview=full&alternatives=true&steps=false&hints=;`;
     $('#url').html(url);
+    console.log(url);
     t1 = new Date();
     $.get(url, function( data ) {
         t2 = new Date();
