@@ -14,7 +14,7 @@
         "description": "",
         "center": [17.963,77.432],
         "zoom": 5,
-        "frontend": "http://139.59.87.238:5001/",
+        "frontend": "https://www-routing-in.sriharithalla.com/",
         "maintainer": "Srihari Thalla"
     },
     "OSRM New Delhi": {
