@@ -1,14 +1,6 @@
 {
-    "OSRM Maharashtra": {
-        "url": "https://server.nikhilvj.co.in/osrm_mh_api/",
-        "title": "OSRM Maharashtra",
-        "description": "",
-        "center": [18.963,75.432],
-        "zoom": 7,
-        "frontend": "https://server.nikhilvj.co.in/osrm_mh/",
-        "maintainer": "<a href=\"https://nikhilvj.co.in\">Nikhil VJ, Pune</a>, nikhil.js [at] gmail.com"
-    },
     "OSRM India": {
+        "active": false,
         "url": "https://routing-in.sriharithalla.com/",
         "title": "OSRM India",
         "description": "",
@@ -17,14 +9,16 @@
         "frontend": "https://www-routing-in.sriharithalla.com/",
         "maintainer": "Srihari Thalla"
     },
-    "OSRM New Delhi": {
-        "url": "https://server2.nikhilvj.co.in/osrm_delhi/",
-        "title": "OSRM New Delhi, India",
-        "center": [28.6117,77.2765],
-        "zoom": 11,
+    "OSRM Pune": {
+        "active": true,
+        "url": "https://server2.nikhilvj.co.in/osrm_pune/",
+        "title": "OSRM for Pune, India",
+        "center": [18.51,73.86],
+        "zoom": 13,
         "maintainer": "<a href=\"https://nikhilvj.co.in\">Nikhil VJ, Pune</a>, nikhil.js [at] gmail.com"
     },
     "OSRM Switzerland (car)": {
+        "active": true,
         "url": "https://routing.osm.ch/routed-car/",
         "title": "OSRM Switzerland (car)",
         "description": "",
@@ -34,6 +28,7 @@
         "maintainer": "<a href=\"https://sosm.ch\">Swiss OpenStreetMap Association</a>"
     },
     "OSRM Switzerland (city bike)": {
+        "active": true,
         "url": "https://routing.osm.ch/routed-bike/",
         "title": "OSRM Switzerland (city bike)",
         "description": "Bike profile for smooth surfaces",
@@ -43,6 +38,7 @@
         "maintainer": "<a href=\"https://sosm.ch\">Swiss OpenStreetMap Association</a>"
     },
     "OSRM Switzerland (touring bike)": {
+        "active": true,
         "url": "https://routing.osm.ch/routed-bike-touring/",
         "title": "OSRM Switzerland (touring bike)",
         "description": "Bike profile including rough surfaces",
@@ -52,6 +48,7 @@
         "maintainer": "<a href=\"https://sosm.ch\">Swiss OpenStreetMap Association</a>"
     },
     "OSRM Switzerland (foot)": {
+        "active": true,
         "url": "https://routing.osm.ch/routed-foot/",
         "title": "OSRM Switzerland (foot)",
         "description": "General walking profile",
@@ -61,6 +58,7 @@
         "maintainer": "<a href=\"https://sosm.ch\">Swiss OpenStreetMap Association</a>"
     },
     "OSRM Switzerland (hiking)": {
+        "active": true,
         "url": "https://routing.osm.ch/routed-hiking/",
         "title": "OSRM Switzerland (hiking)",
         "description": "Routing including demanding hiking paths",

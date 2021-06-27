@@ -28,7 +28,7 @@ var baseLayers = {
 };
 
 var map = L.map('map', {
-    layers: [cartoVoyager],
+    layers: [cartoPositron],
     contextmenu: true,
     contextmenuWidth: 140,
     contextmenuItems: [
@@ -83,7 +83,7 @@ function mapOSRM() {
     let fromRev = $('#osrm_fromPlace').val().split(',').reverse().join(',');
     let toRev = $('#osrm_toPlace').val().split(',').reverse().join(',');
     // var url = `${baseurl}route/v1/foot/${fromRev};${toRev}?overview=full&alternatives=true&steps=false&hints=;&geometries=geojson`;
-    var url = `${baseurl}route/v1/foot/${fromRev};${toRev}?overview=full&alternatives=true&steps=false&hints=;`;
+    var url = `${baseurl}route/v1/foot/${fromRev};${toRev}?overview=full&alternatives=false&steps=false&geometries=polyline6`;
     $('#url').html(url);
     console.log(url);
     t1 = new Date();
@@ -93,7 +93,7 @@ function mapOSRM() {
         var geo = data['routes'][0]['geometry'];
         // console.log(geo);
         var geoLL = polyDecode(geo); // convert polyline to lat-long coords.
-        var shapeLine = L.polyline.antPath(geoLL, {color: "blue", weight:3, opacity:0.7, interactive:true, delay:2000});//.bindTooltip(tooltipContent, {sticky:true});
+        var shapeLine = L.polyline.antPath(geoLL, {color: "blue", weight:3, opacity:0.7, interactive:true, delay:4000});//.bindTooltip(tooltipContent, {sticky:true});
         shapeLine.addTo(osrmLayer);
 
         if (!map.hasLayer(osrmLayer)) map.addLayer(osrmLayer);
@@ -116,7 +116,7 @@ $(document).ready(function() {
         
         Object.entries(globalEndpoints).forEach(
             ([key, value]) => {
-                content += `<option value="${key}">${key}</option>`;
+                if(value['active']) content += `<option value="${key}">${key}</option>`;
             }
         );
         /*
@@ -141,7 +141,7 @@ $(document).ready(function() {
         if(chosenDetails['frontend']) content += ` | <a href="${chosenDetails['frontend']}" target="_blank">Open its own Frontend</a>`;
         if(chosenDetails['maintainer']) content += ` | maintained by ${chosenDetails['maintainer']}`;
 
-        if(chosenDetails['center'] && chosenDetails['zoom']) map.flyTo(chosenDetails['center'], chosenDetails['zoom']);
+        if(chosenDetails['center'] && chosenDetails['zoom']) map.flyTo(chosenDetails['center'], chosenDetails['zoom'], {duration:1, easeLinearity:0.75});
 
         $('#aboutServer').html(content);
     })
