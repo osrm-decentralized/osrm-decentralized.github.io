@@ -6,7 +6,9 @@ const MAP_ORIGIN = [17.963,77.432];
 const MAP_ZOOM = 5;
 var osrmLayer = new L.geoJson(null);
 var markersLayer = new L.geoJson(null);
+var waypointsLayer = new L.geoJson(null);
 var globalEndpoints = {};
+var globalWaypoints = [];
 
 //##### MAP ####################
 /* make leaflet map */
@@ -30,13 +32,15 @@ var baseLayers = {
 var map = L.map('map', {
     layers: [cartoPositron],
     contextmenu: true,
-    contextmenuWidth: 140,
+    contextmenuWidth: 200,
     contextmenuItems: [
         //{text: 'Center map here',  callback: centerMap }, '-', 
         //{ text: 'Start here', callback: pin_fromPlace }, 
         //{ text: 'End here', callback: pin_toPlace }, '-', 
         { text: 'Directions: Start here', callback: osrm_pin_fromPlace }, 
-        { text: 'Directions: End here', callback: osrm_pin_toPlace }
+        { text: 'Directions: Waypoint here', callback: osrm_pin_waypoint },
+        { text: 'Directions: End here', callback: osrm_pin_toPlace },
+        { text: 'Clear Waypoints', callback: clear_waypoints }
         ]    
 }).setView(MAP_ORIGIN, MAP_ZOOM);
 
@@ -70,6 +74,32 @@ function osrm_pin_toPlace (e) {
     mapOSRM();
 }
 
+function osrm_pin_waypoint(e) {
+    globalWaypoints.push(`${e.latlng.lat.toFixed(5)},${e.latlng.lng.toFixed(5)}`);
+    var wpMarker = makeMarker('purple');
+    wpMarker.setLatLng(e.latlng).addTo(waypointsLayer);
+    if (!map.hasLayer(waypointsLayer)) map.addLayer(waypointsLayer);
+
+}
+
+function clear_waypoints(e) {
+    globalWaypoints = [];
+    waypointsLayer.clearLayers();
+}
+
+function composeCoords() {
+    var content = '';
+    let revPoints = [];
+    let fromRev = $('#osrm_fromPlace').val().split(',').reverse().join(',');
+    revPoints.push(fromRev);
+    globalWaypoints.forEach(p => {
+        revPoints.push(p.split(',').reverse().join(','));
+    });
+    let toRev = $('#osrm_toPlace').val().split(',').reverse().join(',');
+    revPoints.push(toRev);
+    return revPoints.join(';')
+    
+}
 
 function mapOSRM() {
     osrmLayer.clearLayers();
@@ -80,16 +110,15 @@ function mapOSRM() {
 
 
     $('#status').html(`Fetching from ${baseurl}..`);
-    let fromRev = $('#osrm_fromPlace').val().split(',').reverse().join(',');
-    let toRev = $('#osrm_toPlace').val().split(',').reverse().join(',');
+
     // var url = `${baseurl}route/v1/foot/${fromRev};${toRev}?overview=full&alternatives=true&steps=false&hints=;&geometries=geojson`;
-    var url = `${baseurl}route/v1/foot/${fromRev};${toRev}?overview=full&alternatives=false&steps=false&geometries=polyline6`;
+    var url = `${baseurl}route/v1/foot/${composeCoords()}?overview=full&alternatives=false&steps=false&geometries=polyline6`;
     $('#url').html(url);
     console.log(url);
     t1 = new Date();
     $.get(url, function( data ) {
         t2 = new Date();
-        $('#dump').val(JSON.stringify(data));
+        $('#dump').val(JSON.stringify(data,null,2));
         var geo = data['routes'][0]['geometry'];
         // console.log(geo);
         var geoLL = polyDecode(geo); // convert polyline to lat-long coords.
@@ -111,7 +140,7 @@ $(document).ready(function() {
     //$.ajaxSetup({ cache: false });
     $.get(endpointsJson, function(data) {
         globalEndpoints = data;
-        console.log(globalEndpoints);
+        // console.log(globalEndpoints);
         var content = '<option value="">Choose the OSRM server</option>';
         
         Object.entries(globalEndpoints).forEach(

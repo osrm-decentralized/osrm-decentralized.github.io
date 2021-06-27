@@ -32,9 +32,8 @@ div {
 
 #dump {
     font-family: monospace;
-    font-size: 0.9em;
+    font-size: 0.8em;
     width: 100%;
-    max-width: 500px;
     height: 300px;
 }
 
@@ -53,9 +52,19 @@ div {
 </p>
 <div id="map"></div>
 <small>Right-click on the map to place your start and end points</small><br><br>
-<p>API query URL: <small><span id="url"></span></small> <a href="http://project-osrm.org/docs/v5.5.1/api/">OSRM API docs</a><br>Query result:<br>
-	<textarea id="dump"></textarea>
+
+<div class="row">
+<div class="col-md-6">
+	<textarea id="dump">Query result</textarea>
+</div>
+<div class="col-md-6">
+	<a href="http://project-osrm.org/docs/v5.24.0/api">OSRM API docs</a><br>
+	<p>Query URL: <small><span id="url"></span></small>
+	
 </p>
+</div>
+</div>
+
 
 <br>
 <p>Roll your own OSRM instance for your own region using our easy docker recipes! Go to <a href="/">home page</a> to learn more.<br>
