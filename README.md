@@ -8,6 +8,8 @@ We're using the fabulous [OSRM Project](http://project-osrm.org/), a free, open 
 
 To reduce difficulty in running for custom areas, we've crafted some Docker recipes (docker build, docker run and voila!) that should enable anyone to set up their own OSRM instance for their own region. You can run these on your local machine as well as on the cloud.
 
+Check out a presentation about it given at Openstreetmap India's Virtual Mappy Hours : [pdf](2020-10-10_VMH_OSRM_for_road_routing.pdf)
+
 ## Decentralized
 That's the key to running things fast and light. Don't bother trying to run an OSRM for the whole planet - what's the point? Large base areas = huge RAM and processor requirements = too expensive! Instead, figure out your region on which you want to run this. Check out the repos in our [github org](https://github.com/osrm-decentralized).
 
